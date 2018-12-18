@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(assigmentOnePartONe
-        main.cpp
+#        main.cpp
         makefile
         Text.cpp
         Text.h
