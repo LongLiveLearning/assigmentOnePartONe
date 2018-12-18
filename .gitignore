@@ -1,2 +1,8 @@
 cmake-build-debug
 .idea/
+Text.o
+TextMain
+TextTester.o
+main
+TextMain.dSYM/Contents/Resources/DWARF/TextMain
+main.dSYM/Contents/Resources/DWARF/main
