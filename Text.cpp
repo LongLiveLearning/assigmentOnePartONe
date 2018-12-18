@@ -7,21 +7,36 @@ using std::string;
 using std::ostream;
 
 
+/**
+ *  Increases the size of the array of strings text
+ to size new_capacity. Resizing has no effect on
+ the contents of the array.
+ The parameter length is the number of words stored
+ in the array, and capacity is the number of allocated
+ elements.
+ If new_capacity is smaller or equal than capacity,
+ does nothing, leaving text and capacity unchanged.
+ Otherwise, increases the reserved space and updates
+ the reference pointer text to point to the new array.
+ Deallocates memory for which there will be no pointer
+ after updating the reference pointer text.
+ Sets the capacity passed by reference to the new capacity.
+ * @param text is an array of string we want to resize passed by reference
+ * @param length number of strings in array text
+ * @param capacity is the size of text array
+ * @param new_capacity the new size of the text array
+ */
 void resize(string*& text, uint length, uint& capacity, uint new_capacity){
-
-    text = new string[capacity];
-    length = 0;
     string* temp;
-    if (new_capacity >= capacity) {
+    if (new_capacity > capacity) {
         temp = new string[new_capacity];
         for (int i=0; i<capacity; i++) {
             temp[i] = text[i];
         }
-        capacity *= 2;
+        capacity = new_capacity;
         delete [] text;
         text = temp;
     }
-
 }
 
 string* readText(istream& in, uint& length, uint& capacity){
